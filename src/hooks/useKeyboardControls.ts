@@ -5,6 +5,7 @@ interface KeyState {
   right: boolean
   jump: boolean
   reset: boolean
+  interact: boolean
 }
 
 export function useKeyboardControls() {
@@ -13,6 +14,7 @@ export function useKeyboardControls() {
     right: false,
     jump: false,
     reset: false,
+    interact: false,
   })
 
   useEffect(() => {
@@ -35,6 +37,9 @@ export function useKeyboardControls() {
         case 'r':
           setKeys(prev => ({ ...prev, reset: true }))
           break
+        case 'e':
+          setKeys(prev => ({ ...prev, interact: true }))
+          break
       }
     }
 
@@ -55,6 +60,9 @@ export function useKeyboardControls() {
           break
         case 'r':
           setKeys(prev => ({ ...prev, reset: false }))
+          break
+        case 'e':
+          setKeys(prev => ({ ...prev, interact: false }))
           break
       }
     }
