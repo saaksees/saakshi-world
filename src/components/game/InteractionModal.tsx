@@ -5,9 +5,10 @@ interface InteractionModalProps {
   isOpen: boolean
   onClose: () => void
   skill: SkillNode | null
+  dashboardPreview?: React.ReactNode
 }
 
-function InteractionModal({ isOpen, onClose, skill }: InteractionModalProps) {
+function InteractionModal({ isOpen, onClose, skill, dashboardPreview }: InteractionModalProps) {
   if (!skill) return null
 
   return (
@@ -16,6 +17,12 @@ function InteractionModal({ isOpen, onClose, skill }: InteractionModalProps) {
         <p className="text-cream text-base leading-relaxed">
           {skill.description}
         </p>
+
+        {dashboardPreview && (
+          <div className="my-6">
+            {dashboardPreview}
+          </div>
+        )}
         
         <div>
           <p className="text-lavender text-sm mb-2">Technologies:</p>
@@ -29,6 +36,13 @@ function InteractionModal({ isOpen, onClose, skill }: InteractionModalProps) {
               </span>
             ))}
           </div>
+        </div>
+
+        {/* Placeholder notice for future content */}
+        <div className="mt-4 p-3 bg-navy-deep border-l-4 border-pink-soft">
+          <p className="text-pink-soft text-xs font-mono">
+            [PLACEHOLDER] Detailed project examples and business impact metrics coming soon
+          </p>
         </div>
       </div>
     </Modal>

@@ -28,6 +28,27 @@ export const skills: SkillNode[] = [
     description: 'Applied statistical methods for hypothesis testing, modeling, and data interpretation.',
     tags: ['Statistics'],
   },
+  {
+    id: 'powerbi',
+    worldId: 'analytics-city',
+    name: 'Power BI',
+    description: 'Dashboard design, DAX formulas for calculated measures, and data modeling for executive reporting.',
+    tags: ['Power BI', 'DAX', 'Data Modeling'],
+  },
+  {
+    id: 'tableau',
+    worldId: 'analytics-city',
+    name: 'Tableau',
+    description: 'Interactive data visualization and dashboard creation for exploratory analysis and stakeholder presentations.',
+    tags: ['Tableau'],
+  },
+  {
+    id: 'business-insights',
+    worldId: 'analytics-city',
+    name: 'Business Insights',
+    description: 'Translating data dashboards into actionable KPIs and strategic recommendations for business stakeholders.',
+    tags: ['KPI Analysis', 'Business Insights'],
+  },
 ]
 
 export function getSkillsByWorld(worldId: string): SkillNode[] {

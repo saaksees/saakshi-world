@@ -3,6 +3,7 @@ import Landing from './components/Landing'
 import Styleguide from './components/Styleguide'
 import Game from './components/Game'
 import DataValley from './worlds/DataValley'
+import AnalyticsCity from './worlds/AnalyticsCity'
 
 function App() {
   return (
@@ -12,6 +13,7 @@ function App() {
         <Route path="/styleguide" element={<Styleguide />} />
         <Route path="/game" element={<Game />} />
         <Route path="/world/data-valley" element={<DataValley />} />
+        <Route path="/world/analytics-city" element={<AnalyticsCity />} />
       </Routes>
     </BrowserRouter>
   )
