@@ -4,6 +4,7 @@ import Styleguide from './components/Styleguide'
 import Game from './components/Game'
 import DataValley from './worlds/DataValley'
 import AnalyticsCity from './worlds/AnalyticsCity'
+import MLLab from './worlds/MLLab'
 
 function App() {
   return (
@@ -14,6 +15,7 @@ function App() {
         <Route path="/game" element={<Game />} />
         <Route path="/world/data-valley" element={<DataValley />} />
         <Route path="/world/analytics-city" element={<AnalyticsCity />} />
+        <Route path="/world/ml-lab" element={<MLLab />} />
       </Routes>
     </BrowserRouter>
   )

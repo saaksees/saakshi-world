@@ -49,6 +49,34 @@ export const skills: SkillNode[] = [
     description: 'Translating data dashboards into actionable KPIs and strategic recommendations for business stakeholders.',
     tags: ['KPI Analysis', 'Business Insights'],
   },
+  {
+    id: 'regression',
+    worldId: 'ml-lab',
+    name: 'Regression',
+    description: 'Building predictive models for continuous outcomes using linear and logistic regression techniques.',
+    tags: ['Linear Regression', 'Logistic Regression'],
+  },
+  {
+    id: 'classification',
+    worldId: 'ml-lab',
+    name: 'Classification',
+    description: 'Training decision tree and ensemble models to categorize data into discrete classes.',
+    tags: ['Random Forest', 'Classification'],
+  },
+  {
+    id: 'forecasting',
+    worldId: 'ml-lab',
+    name: 'Forecasting',
+    description: 'Time series prediction with confidence intervals using Prophet and ARIMA/SARIMAX models.',
+    tags: ['Prophet', 'ARIMA/SARIMAX', 'Time Series'],
+  },
+  {
+    id: 'xgboost',
+    worldId: 'ml-lab',
+    name: 'XGBoost',
+    description: 'Gradient boosting framework for high-performance predictive modeling and feature importance analysis.',
+    tags: ['XGBoost'],
+  },
 ]
 
 export function getSkillsByWorld(worldId: string): SkillNode[] {
