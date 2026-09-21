@@ -1,12 +1,22 @@
 import { SkillNode } from '../../data/skills'
+import { terminalResponses } from '../../data/terminalResponses'
 
 interface WorldListViewProps {
   worldName: string
   skills: SkillNode[]
   onBack: () => void
+  showTerminalSamples?: boolean
 }
 
-function WorldListView({ worldName, skills, onBack }: WorldListViewProps) {
+function WorldListView({ worldName, skills, onBack, showTerminalSamples = false }: WorldListViewProps) {
+  // Get sample Q&A from terminal responses (exclude fallback)
+  const terminalSamples = showTerminalSamples 
+    ? terminalResponses.slice(0, -1).map(r => ({
+        question: r.triggerPhrases[0],
+        answer: r.response
+      }))
+    : []
+
   return (
     <div className="min-h-screen bg-navy-deep text-cream font-sans p-8">
       <div className="max-w-3xl mx-auto">
@@ -53,6 +63,32 @@ function WorldListView({ worldName, skills, onBack }: WorldListViewProps) {
               </div>
             </article>
           ))}
+
+          {/* Terminal Sample Q&A */}
+          {showTerminalSamples && terminalSamples.length > 0 && (
+            <article className="bg-navy-panel border-2 border-electric-blue p-6">
+              <h2 className="font-pixel text-xl text-cream mb-3">
+                LLM Terminal
+              </h2>
+              
+              <p className="text-cream text-base leading-relaxed mb-4">
+                Interactive terminal for exploring projects and experience. Sample questions and answers:
+              </p>
+
+              <div className="space-y-4">
+                {terminalSamples.map((qa, i) => (
+                  <div key={i} className="bg-navy-deep border-l-4 border-electric-blue p-4">
+                    <p className="font-mono text-sm text-pink-hot mb-2">
+                      {'> '}{qa.question}
+                    </p>
+                    <p className="font-mono text-sm text-electric-blue leading-relaxed">
+                      {qa.answer}
+                    </p>
+                  </div>
+                ))}
+              </div>
+            </article>
+          )}
         </div>
       </div>
     </div>

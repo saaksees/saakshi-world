@@ -77,6 +77,27 @@ export const skills: SkillNode[] = [
     description: 'Gradient boosting framework for high-performance predictive modeling and feature importance analysis.',
     tags: ['XGBoost'],
   },
+  {
+    id: 'ai-llms',
+    worldId: 'ai-kingdom',
+    name: 'AI/LLMs',
+    description: 'Building and deploying large language model applications with prompt engineering and retrieval-augmented generation.',
+    tags: ['AI', 'LLMs'],
+  },
+  {
+    id: 'nlp',
+    worldId: 'ai-kingdom',
+    name: 'NLP',
+    description: 'Natural language processing for text analysis, sentiment detection, and information extraction.',
+    tags: ['NLP'],
+  },
+  {
+    id: 'computer-vision',
+    worldId: 'ai-kingdom',
+    name: 'Computer Vision',
+    description: 'Image recognition and processing using deep learning frameworks for classification and feature detection.',
+    tags: ['Computer Vision', 'TensorFlow', 'Keras'],
+  },
 ]
 
 export function getSkillsByWorld(worldId: string): SkillNode[] {

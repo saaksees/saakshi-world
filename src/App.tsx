@@ -5,6 +5,7 @@ import Game from './components/Game'
 import DataValley from './worlds/DataValley'
 import AnalyticsCity from './worlds/AnalyticsCity'
 import MLLab from './worlds/MLLab'
+import AIKingdom from './worlds/AIKingdom'
 
 function App() {
   return (
@@ -16,6 +17,7 @@ function App() {
         <Route path="/world/data-valley" element={<DataValley />} />
         <Route path="/world/analytics-city" element={<AnalyticsCity />} />
         <Route path="/world/ml-lab" element={<MLLab />} />
+        <Route path="/world/ai-kingdom" element={<AIKingdom />} />
       </Routes>
     </BrowserRouter>
   )
